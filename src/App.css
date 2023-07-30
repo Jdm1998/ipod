@@ -1,38 +1,237 @@
-.App {
+.container{
+   width:500px;
+   height: 700px;
+   background-color: aliceblue;
+   position: relative;
+  top:10px;
+   margin:0 auto;
+   border: 1px solid black;
+   border-radius: 20px;;
+}
+    
+.display{
+  width:450px;
+  height: 400px;
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin:10px auto;
+  overflow: hidden;
+  
+}
+.controller{
+  width: 250px;
+  height: 250px;
+  margin:10px auto;
+  border :2px solid black;
+  border-radius: 50%;
+  position: relative;
+}
+
+.nestedcircle{
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+}
+.controlleroptions{
+  position: relative;
+  padding:10px;
+}
+.controlleroptions span{
+  position: absolute;
+  /* border: 1px solid black; */
+  font-size: larger;
+  padding:10px;
+  display: inline-block;
+  width: 80px;
+  cursor: pointer;
+}
+.menu{
+  top:10px;
+  left:90px;
+}
+.next{
+  left:170px;
+  top:100px;
+
+}
+.playpause{
+top:180px;
+left:70px;
+}
+.back{
+  top:100px;
+}
+
+.menucontainer{
+  width:200px;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding:10px;
+  
+}
+
+.menucontainer li{
+  list-style-type: none;
+  padding:10px;
+  margin:10px;
+  position: relative;
+
+}
+.menucontainer .active{
+  background-color: aqua;
+  border-radius: 10px;
+}
+.menucontainer li:hover::after{
+  content:">";
+  position: absolute;
+  right:10px;
+  
+  
+
+}
+
+.cfcontainer{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:420px;
+  height: 400px;
+}
+.cfcontainer .slider{
+  position: relative;
+  transform-style: preserve-3d;;
+  height: 400px;
+  width: 500px;
+  
+  perspective: 1000px;
+}
+.slider div{
+  position: absolute;
+  border-radius: 10px;
+  transition: all;
+  transform-style: preserve-3d;;
+  width:200px;
+  height: 300px;
+  left: 30%;
+  top:20%;
+  border-radius: 10px;
+  overflow:hidden;
+}
+
+.slider div img{
+  height: 300px;
+  width:200px;  
+  object-fit: cover;
+}
+
+.cfprev{
+  transform: translate3d(-70%,0,-122px); 
+  box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
+
+  transform: rotate3d(0,0,2);
+
+}
+
+.cfnext{
+  
+  transform: translate3d(70%,0,-122px);
+  box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
+  
+}
+
+.musicplayercontainer{
+  background-color: aquamarine;
+  width:450px;
+  height: 400px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  
+}
+.musicplayercontainer .background{
+  background-color:aliceblue ;
+  width: 400px;
+  height: 250px;
+  margin:10px auto;
+
+}
+
+.musicplayercontainer .musicprogress{
+  height: 10px;
+  width: 400px;
+  background-color: white;
+  margin: 10px auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.musicprogress .musiccompleted{
+  width: 200px;
+  height: 10px;
+  background-color: grey;
+  transition: all ease;
+}
+
+.musiccontroller {
+  width: 400px;
+  height: 50px;
+  background-color:rgba(0,0,199,0.1);
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px 0;
+  ;
+
+
+}
+
+.musicprev,
+.musicpause,
+.musicnext{
+  height:30px;
+  width: 50px;
+}
+
+i{
+  font-size: 2rem;
+  
+}
+
+.game{
+  width: 450px;
+  height: 400px;
+  background-color: rgba(255,0,0,0.7);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
+.gamemenu{
+  background-color: (255,0,0,0.1);
+  width:200px;
+  text-align: center;
+  padding: 10px;
 
-.App-link {
-  color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gamemenu li{
+  list-style: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 4px;
+}
+.gamemenu .active{
+  background-color: rgba(255, 0, 0,0.6);
+  border-radius: 10px;
 }
